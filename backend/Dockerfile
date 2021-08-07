@@ -1,7 +1,7 @@
-FROM 16.6.1-alpine3.11
+FROM node:16.6.1-alpine3.11
 
 WORKDIR /usr/src/app
 
 COPY ./server .
 
-
+RUN npm i

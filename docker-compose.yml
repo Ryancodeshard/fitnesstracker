@@ -1,0 +1,21 @@
+version: '3.7'
+
+services: 
+  frontend: 
+    image: fitnesstracker-frontend
+    container_name: fitnesstracker-frontend
+    build: ./frontend
+    volumes: 
+      - ./frontend/client:/usr/src/app
+    ports: 
+      - 3000:3000 
+    
+  backend: 
+    image: fitnesstracker-backend
+    container_name: fitnesstracker-backend
+    build: ./backend
+    volumes:
+      - ./backend/server:/user/src/app
+    ports:
+      - 8080:8080
+    command: sh -c 'npm run server'
